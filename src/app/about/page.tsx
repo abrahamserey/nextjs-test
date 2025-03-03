@@ -1,6 +1,7 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function AboutPage() {
+    // const prices ¡
   return (
     <div>
        <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
