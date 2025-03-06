@@ -1,6 +1,6 @@
 // import type { Config } from 'drizzle-kit';
 
-
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 require('dotenv').config({ path: require('path').resolve(process.cwd(), '../.env') });
 
 export default {
