@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typescript-check": "tsc",
     "db:start": "brew services start postgresql",
     "drizzle:studio": "drizzle-kit studio --config src/database/drizzle.config.ts",
     "drizzle:push": "drizzle-kit push --config src/database/drizzle.config.ts",
