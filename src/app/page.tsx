@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DatabaseOperations } from "../database/operations";
 import { CreatePost } from "./components/Blog/CreatePost";
+import { SignedIn } from "@clerk/nextjs";
 
 export default async function Home() {
 
@@ -9,7 +10,9 @@ export default async function Home() {
 
   return (
     <div>
-      <CreatePost />
+      <SignedIn>
+        <CreatePost />
+      </SignedIn>
       <div className='flex flex-col gap-20'>
         {posts.map((post) => 
           <div className='flex flex-col gap-4' key={post.id}>

@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "db:start": "brew services start postgresql",
     "drizzle:studio": "drizzle-kit studio --config src/database/drizzle.config.ts",
     "drizzle:push": "drizzle-kit push --config src/database/drizzle.config.ts",
     "drizzle:generate": "drizzle-kit generate --config src/database/drizzle.config.ts"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.12.4",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.30.7",
     "eslint-plugin-drizzle": "^0.2.3",
