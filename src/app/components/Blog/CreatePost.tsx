@@ -1,9 +1,8 @@
-      
-'use client'
+'use client';
 
-import classNames from 'classnames'
+import classNames from 'classnames';
 
-import { useState } from 'react'
+import { useState } from 'react';
 import {
   FaceFrownIcon,
   FaceSmileIcon,
@@ -12,8 +11,8 @@ import {
   HeartIcon,
   PaperClipIcon,
   XMarkIcon,
-} from '@heroicons/react/20/solid'
-import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
+} from '@heroicons/react/20/solid';
+import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
 
 import { useUser } from '@clerk/clerk-react';
 
@@ -24,34 +23,29 @@ const moods = [
   { name: 'Sad', value: 'sad', icon: FaceFrownIcon, iconColor: 'text-white', bgColor: 'bg-yellow-400' },
   { name: 'Thumbsy', value: 'thumbsy', icon: HandThumbUpIcon, iconColor: 'text-white', bgColor: 'bg-blue-500' },
   { name: 'I feel nothing', value: null, icon: XMarkIcon, iconColor: 'text-gray-400', bgColor: 'bg-transparent' },
-]
+];
 
 // CMD + K + C - comment
 // CMD + K + U - uncomnent
 
-
 export const CreatePost = () => {
-  const [selected, setSelected] = useState(moods[5])
-  const [post, setPost] = useState<string>("")
+  const [selected, setSelected] = useState(moods[5]);
+  const [post, setPost] = useState<string>('');
 
   const { user } = useUser();
 
   const insertInDatabase = async () => {
-      const response = await fetch('/api/create', {
-          'method': 'POST',
-          'body': post
-      })
-      console.log('-->', response)
-  }
+    const response = await fetch('/api/create', {
+      method: 'POST',
+      body: post,
+    });
+    console.log('-->', response);
+  };
 
   return (
     <div className="flex items-start space-x-4">
       <div className="shrink-0">
-        <img
-          alt=""
-          src={user?.imageUrl}
-          className="inline-block size-10 rounded-full"
-        />
+        <img alt="" src={user?.imageUrl} className="inline-block size-10 rounded-full" />
       </div>
       <div className="min-w-0 flex-1">
         <div className="relative">
@@ -157,7 +151,5 @@ export const CreatePost = () => {
         </div>
       </div>
     </div>
-  )
-}
-
-
+  );
+};
